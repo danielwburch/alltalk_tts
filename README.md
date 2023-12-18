@@ -61,7 +61,7 @@ This has been tested on the current Dec 2023 release of Text generation webUI. I
 
 **Where to find voices** https://aiartes.com/voiceai or https://commons.wikimedia.org/ or interviews on youtube etc. Instructions on how to cut down and prepare a voice sample are within the built in documentation.
 
-### 🟩 Other installation notes
+#### 🟩 Other installation notes
 On first startup, AllTalk will download the Coqui XTTSv2 2.0.2 model to its **models** folder (1.8GB space required). You can customse your model or use the TTS latest model within the interface (details in documentation).
 
 Once the extension is loaded, please find all documentation and settings on the link provided in the interface (as shown in the screenshot below).
@@ -75,7 +75,7 @@ I could force a delimeter in at this stage, but I know it would/may affect thing
 
 `"`Hey! I'm so excited to finally meet you. I've heard so many great things about you and I'm eager to pick your brain about computers. I'm sure you have a wealth of knowledge that I can learn from.`"`
 
-### 🟪 Updating
+## 🟪 Updating
 This is pretty much a repeat of the installation process. 
 
 1) In a command prompt/terminal window you need to move into your Text generation webUI folder:<br><br>
@@ -101,7 +101,7 @@ config.json
 confignew.json
 models.json
 ```
-### 🟪 Problems Updating
+#### 🟪 Problems Updating
 
 If you do experience any problems, the simplest method to resolve this will be:
 
@@ -190,12 +190,12 @@ I would suggest following [Problems Updating](https://github.com/erew123/alltalk
 As far as I am aware, these are to do with the chrome browser the gradio text-generation-webui in some way. I raised an issue about this on the text-generation-webui [here](https://github.com/oobabooga/text-generation-webui/issues/4788) where you can see that AllTalk is not loaded and the messages persist. Either way, this is more a warning than an actual issue, so shouldnt affect any functionality of either AllTalk or text-generation-webui, they are more just an annoyance.
 
 ## 🔵🟢🟡 DeepSpeed Installation Options
-### 🔵 For Linux
+#### 🔵 For Linux
 ➡️DeepSpeed requires an Nvidia Graphics card!⬅️
 
 Covered in the online/buit-in documentation, but a nice easy install.
 
-### 🟢🟡 For Windows & Python 3.11.x or 3.10.x
+#### 🟢🟡 For Windows & Python 3.11.x or 3.10.x
 DeepSpeed v11.1 and v11.2 will work on the current text-generation-webui Python 3.11 environment! You have 2x options for how to setup DeepSpeed on Windows. A quick way (🟢Option 1) and a long way (🟡Option 2).
 
 Thanks to [@S95Sedan](https://github.com/S95Sedan) - They managed to get DeepSpeed 11.2 working on Windows via making some edits to the original Microsoft DeepSpeed v11.2 installation. The original post is [here](https://github.com/oobabooga/text-generation-webui/issues/4734#issuecomment-1843984142).
