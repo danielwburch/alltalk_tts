@@ -190,20 +190,33 @@ I would suggest following [Problems Updating](https://github.com/erew123/alltalk
 As far as I am aware, these are to do with the chrome browser the gradio text-generation-webui in some way. I raised an issue about this on the text-generation-webui [here](https://github.com/oobabooga/text-generation-webui/issues/4788) where you can see that AllTalk is not loaded and the messages persist. Either way, this is more a warning than an actual issue, so shouldnt affect any functionality of either AllTalk or text-generation-webui, they are more just an annoyance.
 
 ## 🔵🟢🟡 DeepSpeed Installation Options
-#### 🔵 For Linux
+#### 🔵 Linux Installation
+<details>
+	<summary>Click to expand: Linux DeepSpeed installation</summary>
+
 ➡️DeepSpeed requires an Nvidia Graphics card!⬅️
 
-Covered in the online/buit-in documentation, but a nice easy install.
-
-#### 🟢🟡 For Windows & Python 3.11.x or 3.10.x
-DeepSpeed v11.1 and v11.2 will work on the current text-generation-webui Python 3.11 environment! You have 2x options for how to setup DeepSpeed on Windows. A quick way (🟢Option 1) and a long way (🟡Option 2).
+1) Preferably use your built in package manager to install CUDA tools. Alternatively download and install the Nvidia Cuda Toolkit for Linux [Nvidia Cuda Toolkit 11.8 or 12.1](https://developer.nvidia.com/cuda-toolkit-archive)<br><br>
+2) Open a terminal console.<br><br>
+3) Install libaio-dev (however your Linux version installs things) e.g. `sudo apt install libaio-dev`<br><br>
+4) Move into your Text generation webUI folder e.g. `cd text-generation-webui`<br><br>
+5) Start the Text generation webUI Python environment `./cmd_linux.sh`<br><br>
+6) Text generation webUI **overwrites** the CUDA_HOME variable on each `./cmd_linux.sh` or './start_linux.sh` startup, so you will need to either force this to be changed within the python environment OR change it each time you `./cmd_linux.sh`<br> <br>
+7) You can set the CUDA_HOME environment with `export CUDA_HOME=/usr/local/cuda` or export `CUDA_HOME=/etc/alternatives/cuda`. These are the standard paths on Ubuntu, but could vary on other Linux flavours.<br> <br>
+If you try to start DeepSpeed without the path set correctly, expect an error similar to `[Errno 2] No such file or directory: /home/yourname/text-generation-webui/installer_files/env/bin/nvcc`<br> <br>
+8) Now install deepspeed with pip install deepspeed<br><br>
+9) You can now start Text generation webUI `python server.py` ensuring to activate your extensions.
+</details>
+	
+#### 🟢🟡 Windows Installation
+DeepSpeed v11.2 will work on the current default text-generation-webui Python 3.11 environment! You have 2x options for how to setup DeepSpeed on Windows. A quick way (🟢Option 1) and a long way (🟡Option 2).
 
 Thanks to [@S95Sedan](https://github.com/S95Sedan) - They managed to get DeepSpeed 11.2 working on Windows via making some edits to the original Microsoft DeepSpeed v11.2 installation. The original post is [here](https://github.com/oobabooga/text-generation-webui/issues/4734#issuecomment-1843984142).
 
 #### 🟢 OPTION 1 - Quick and easy!
 <details>
-	<summary>Pre-Compiled Wheel Deepspeed v11.2 (for Windows and Python 3.11 and 3.10)</summary>
-➡️DeepSpeed requires an Nvidia Graphics card!⬅️
+	<summary>Click to expand: Pre-Compiled Wheel Deepspeed v11.2 (Python 3.11 and 3.10)</summary>
+➡️DeepSpeed requires an Nvidia Graphics card!⬅️<br>
 
 1) Download the correct wheel version for your Python/Cuda from [here](https://github.com/erew123/alltalk_tts/releases/tag/deepspeed) and save the file it inside your **text-generation-webui** folder.
 
@@ -222,10 +235,10 @@ Thanks to [@S95Sedan](https://github.com/S95Sedan) - They managed to get DeepSpe
 
 #### 🟡 OPTION 2 - A bit more complicated!
 <details>
-	<summary>Manual Build DeepSpeed v11.2 (for Windows and Python 3.11 and 3.10)</summary>
-➡️DeepSpeed requires an Nvidia Graphics card!⬅️
+	<summary>Click to expand: Manual Build DeepSpeed v11.2 (Python 3.11 and 3.10)</summary>
+➡️DeepSpeed requires an Nvidia Graphics card!⬅️<br><br>
 
-DeepSpeed Version 11.2 with CUDA 11.8 or 12.1 - Installation Instructions:
+This will take about 1 hour to complete and about 6GB of disk space.<br>
 
 1. Download the 11.2 release of [DeepSpeed](https://github.com/microsoft/DeepSpeed/releases/tag/v0.11.2) extract it to a folder. 
 2. Install Visual C++ build tools, such as [VS2019 C++ x64/x86](https://learn.microsoft.com/en-us/visualstudio/releases/2019/redistribution#vs2019-download) build tools.
