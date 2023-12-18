@@ -201,7 +201,8 @@ DeepSpeed v11.1 and v11.2 will work on the current text-generation-webui Python 
 Thanks to [@S95Sedan](https://github.com/S95Sedan) - They managed to get DeepSpeed 11.2 working on Windows via making some edits to the original Microsoft DeepSpeed v11.2 installation. The original post is [here](https://github.com/oobabooga/text-generation-webui/issues/4734#issuecomment-1843984142).
 
 #### 🟢 OPTION 1 - Quick and easy!
-#### Pre-Compiled Wheel Deepspeed v11.2 (for Windows and Python 3.11 and 3.10) 
+<details>
+	<summary>Pre-Compiled Wheel Deepspeed v11.2 (for Windows and Python 3.11 and 3.10)</summary>
 ➡️DeepSpeed requires an Nvidia Graphics card!⬅️
 
 1) Download the correct wheel version for your Python/Cuda from [here](https://github.com/erew123/alltalk_tts/releases/tag/deepspeed) and save the file it inside your **text-generation-webui** folder.
@@ -217,9 +218,11 @@ Thanks to [@S95Sedan](https://github.com/S95Sedan) - They managed to get DeepSpe
 6) When you start up text-generation-webui, and AllTalk starts, you should see **[AllTalk Startup] DeepSpeed Detected**
     
 7) Within AllTalk, you will now have a checkbox for **Activate DeepSpeed** though remember you can only change **1x setting every 15 or so seconds**, so dont try to activate DeepSpeed **and** LowVRAM/Change your model simultantiously. Do one of those, wait 15-20 seconds until the change is confirmed in the terminal/command prompt, then you can change the other. When you are happy it works, you can set the default start-up settings in the settings page.
+</details>
 
 #### 🟡 OPTION 2 - A bit more complicated!
-#### Manual Build DeepSpeed v11.2 (for Windows and Python 3.11 and 3.10) 
+<details>
+	<summary>Manual Build DeepSpeed v11.2 (for Windows and Python 3.11 and 3.10)</summary>
 ➡️DeepSpeed requires an Nvidia Graphics card!⬅️
 
 DeepSpeed Version 11.2 with CUDA 11.8 or 12.1 - Installation Instructions:
@@ -312,6 +315,7 @@ def get_shm_size():
 ```build_win.bat``` and wait 10-20 minutes.
 
 11. Now `cd dist` to go into your dist folder and you can now `pip install deepspeed-YOURFILENAME.whl` (or whatever your WHL file is called).
+</details>
 
 ### 🔴 Future to-do list
 - Complete & document the new/full standalone mode API.
