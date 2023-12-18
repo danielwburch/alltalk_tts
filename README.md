@@ -27,13 +27,6 @@ Should you want the older version of the narrator engine+text filtering, I will 
 
 DeepSpeed **v11.2** can be installed within the **default text-generation-webui Python 3.11 environment**. Instructions [here](https://github.com/erew123/alltalk_tts#deepspeed-112-for-windows--python-311) (or scroll down). Please note, this is **not** an official Microsoft method (currently) so they will not support you with this style installation. Officially, only DeepSpeed v8.3 is installing on Python 3.9.x.
 
-#### The one thing I cant easily work around
-With a RP chat with your AI, **on your character card** `parameters menu` > `character tab` > `greeting` make sure that anything in there that is the **narrator is in asterisks** and anything **spoken is in double quotes**, then hit the `save` (disk) button. Greeting paragraphs/sentences are handled differently from how the AI sends text and so its difficut to account for them both.
-
-I could force a delimeter in at this stage, but I know it would/may affect things further down the line in the chat and I need a good think about that before just making a change. This issue **only** affects the greeting card/start of conversation and the "example" card that comes with text-generation-webui suffers this issue (if you want to try it for yourself). So you would put double quotes around like this (from the example card):
-
-`"`Hey! I'm so excited to finally meet you. I've heard so many great things about you and I'm eager to pick your brain about computers. I'm sure you have a wealth of knowledge that I can learn from.`"`
-
 ## 🟩 Installation on Text generation web UI
 This has been tested on the current Dec 2023 release of Text generation webUI. If you have not updated it for a while, you may wish to update Text generation webUI, [instructions here](https://github.com/oobabooga/text-generation-webui?tab=readme-ov-file#how-to-install)
 
@@ -60,7 +53,7 @@ This has been tested on the current Dec 2023 release of Text generation webUI. I
 
 8) You can now start move back to the main Text generation webUI folder `cd ..` (a few times), start Text generation webUI (`start_windows.bat`,`./start_linux.sh`, `start_macos.sh` or `start_wsl.bat`)  and load the AllTalk extension in the Text generation webUI **session** tab.
    
-9) Please read the note below about start-up times and also the note above about ensuring your character cards are set up [correctly](https://github.com/erew123/alltalk_tts#the-one-thing-i-cant-easily-work-around)
+9) Please read the note below about start-up times and also the note about ensuring your character cards are set up [correctly](https://github.com/erew123/alltalk_tts#the-one-thing-i-cant-easily-work-around)
 
 10) Some extra voices downloadable [here](https://drive.google.com/file/d/1bYdZdr3L69kmzUN3vSiqZmLRD7-A3M47/view?usp=drive_link)
 
@@ -76,6 +69,13 @@ On first startup, AllTalk will download the Coqui XTTSv2 2.0.2 model to its **mo
 Once the extension is loaded, please find all documentation and settings on the link provided in the interface (as shown in the screenshot below).
 
 To start AllTalk every Text generation webUI loads, edit the Text generation webUI `CMD_FLAGS.txt` file in the main `text-generation-webui` folder and add `--extensions alltalk_tts`.
+
+#### 🟩 The one thing I cant easily work around
+With a RP chat with your AI, **on your character card** `parameters menu` > `character tab` > `greeting` make sure that anything in there that is the **narrator is in asterisks** and anything **spoken is in double quotes**, then hit the `save` (disk) button. Greeting paragraphs/sentences are handled differently from how the AI sends text and so its difficut to account for them both.
+
+I could force a delimeter in at this stage, but I know it would/may affect things further down the line in the chat and I need a good think about that before just making a change. This issue **only** affects the greeting card/start of conversation and the "example" card that comes with text-generation-webui suffers this issue (if you want to try it for yourself). So you would put double quotes around like this (from the example card):
+
+`"`Hey! I'm so excited to finally meet you. I've heard so many great things about you and I'm eager to pick your brain about computers. I'm sure you have a wealth of knowledge that I can learn from.`"`
 
 ### 🟪 Updating
 This is pretty much a repeat of the installation process. 
