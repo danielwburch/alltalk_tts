@@ -219,7 +219,7 @@ Thanks to [@S95Sedan](https://github.com/S95Sedan) - They managed to get DeepSpe
 `cmd_windows.bat`
 
 3) With the file that you saved in the **text-generation-webui folder** you now type the following, replacing YOUR-VERSION with the name of the file you have:<br><br>
-`pip install "deepspeed-0.11.2+**YOUR-VERSION**-win_amd64.whl"`
+`pip install "deepspeed-0.11.2+YOUR-VERSION-win_amd64.whl"`
    
 5) This should install through cleanly and you should now have DeepSpeed v11.2 installed within the Python 3.11/3.10 environment of text-generation-webui.
    
