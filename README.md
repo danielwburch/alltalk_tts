@@ -23,9 +23,7 @@ AllTalk is an updated version of the Coqui_tts extension for Text Generation web
 #### Updates
 The latest build (13 Dec 2023) has had the entire text filtering engine and narration engine rebuilt from scratch. It's highly complicated how its actually working, but the end result it a much clearer TTS output and much better control over the narrator option and how to handle text that isnt within quotes or asterisks. Its a highly recommened update, for the improved quality it gives to the TTS output, if nothing else.
 
-Should you want the older version of the narrator engine+text filtering, I will leave this older copy [here](https://github.com/erew123/alltalk_tts/releases/tag/v1-old-narrator)
-
-DeepSpeed **v11.2** can be installed within the **default text-generation-webui Python 3.11 environment**. Instructions [here](https://github.com/erew123/alltalk_tts#deepspeed-112-for-windows--python-311) (or scroll down). Please note, this is **not** an official Microsoft method (currently) so they will not support you with this style installation. Officially, only DeepSpeed v8.3 is installing on Python 3.9.x.
+DeepSpeed **v11.2** can be installed within the **default text-generation-webui Python 3.11 environment**. Installs in custom Python environments are possible, but can be more complicated. Instructions [here](https://github.com/erew123/alltalk_tts#deepspeed-112-for-windows--python-311) (or scroll down).
 
 ## 🟩 Installation on Text generation web UI
 This has been tested on the current Dec 2023 release of Text generation webUI. If you have not updated it for a while, you may wish to update Text generation webUI, [instructions here](https://github.com/oobabooga/text-generation-webui?tab=readme-ov-file#how-to-install)
