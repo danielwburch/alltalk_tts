@@ -55,18 +55,12 @@ This has been tested on the current Dec 2023 release of Text generation webUI. I
 
 10) Some extra voices downloadable [here](https://drive.google.com/file/d/1bYdZdr3L69kmzUN3vSiqZmLRD7-A3M47/view?usp=drive_link)
 
-**Note: It can take a while to start up.** Check the command prompt/terminal window if you want to know what its doing. After it says "Model Loaded" the Text generation webUI is usually available on its IP address a few seconds later, for you to connect to in your browser.
-
-**Documentation:** Click on the link when inside Text generation webUI as shown in the screenshot [here](https://github.com/erew123/alltalk_tts#screenshots)
-
-**Where to find voices** https://aiartes.com/voiceai or https://commons.wikimedia.org/ or interviews on youtube etc. Instructions on how to cut down and prepare a voice sample are within the built in documentation.
-
 #### 🟩 Other installation notes
-On first startup, AllTalk will download the Coqui XTTSv2 2.0.2 model to its **models** folder (1.8GB space required). You can customse your model or use the TTS latest model within the interface (details in documentation).
+On first startup, AllTalk will download the Coqui XTTSv2 2.0.2 model to its **models** folder (1.8GB space required). Check the command prompt/terminal window if you want to know what its doing. After it says "Model Loaded" the Text generation webUI is usually available on its IP address a few seconds later, for you to connect to in your browser.
 
 Once the extension is loaded, please find all documentation and settings on the link provided in the interface (as shown in the screenshot below).
 
-To start AllTalk every Text generation webUI loads, edit the Text generation webUI `CMD_FLAGS.txt` file in the main `text-generation-webui` folder and add `--extensions alltalk_tts`.
+**Where to find voices** https://aiartes.com/voiceai or https://commons.wikimedia.org/ or interviews on youtube etc. Instructions on how to cut down and prepare a voice sample are within the built in documentation.
 
 #### 🟩 The one thing I cant easily work around
 Narrator function specific - With a RP chat with your AI, **on your character card** `parameters menu` > `character tab` > `greeting` make sure that anything in there that is the **narrator is in asterisks** and anything **spoken is in double quotes**, then hit the `save` (💾) button. Greeting paragraphs/sentences are handled differently from how the AI sends text and so its difficut to account for them both.
@@ -201,12 +195,13 @@ As far as I am aware, these are to do with the chrome browser the gradio text-ge
 3) Install libaio-dev (however your Linux version installs things) e.g. `sudo apt install libaio-dev`<br><br>
 4) Move into your Text generation webUI folder e.g. `cd text-generation-webui`<br><br>
 5) Start the Text generation webUI Python environment `./cmd_linux.sh`<br><br>
-6) Text generation webUI **overwrites** the CUDA_HOME variable on each `./cmd_linux.sh` or './start_linux.sh` startup, so you will need to either force this to be changed within the python environment OR change it each time you `./cmd_linux.sh`<br> <br>
-7) You can set the CUDA_HOME environment with `export CUDA_HOME=/usr/local/cuda` or export `CUDA_HOME=/etc/alternatives/cuda`. These are the standard paths on Ubuntu, but could vary on other Linux flavours.<br> <br>
-If you try to start DeepSpeed without the path set correctly, expect an error similar to `[Errno 2] No such file or directory: /home/yourname/text-generation-webui/installer_files/env/bin/nvcc`<br> <br>
+6) Text generation webUI **overwrites** the CUDA_HOME variable on each `./cmd_linux.sh` or `./start_linux.sh` startup, so you will need to either force this to be changed within the python environment OR change it each time you `./cmd_linux.sh`<br> <br>
+[Conda manual - Environment variables](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#set-env-vars)<br><br>
+7) You can set the CUDA_HOME environment with `export CUDA_HOME=/usr/local/cuda` or `export CUDA_HOME=/etc/alternatives/cuda`. These are the standard paths on Ubuntu, but could vary on other Linux flavours.<br> <br>
+If you try to start DeepSpeed without the path set incorrectly, expect an error similar to `[Errno 2] No such file or directory: /home/yourname/text-generation-webui/installer_files/env/bin/nvcc`<br> <br>
 8) Now install deepspeed with pip install deepspeed<br><br>
 9) You can now start Text generation webUI `python server.py` ensuring to activate your extensions.
-</details>
+<br><br></details>
 	
 #### 🟢🟡 Windows Installation
 DeepSpeed v11.2 will work on the current default text-generation-webui Python 3.11 environment! You have 2x options for how to setup DeepSpeed on Windows. A quick way (🟢Option 1) and a long way (🟡Option 2).
@@ -223,15 +218,15 @@ Thanks to [@S95Sedan](https://github.com/S95Sedan) - They managed to get DeepSpe
 2) Open a command prompt window, move into your **text-generation-webui folder**, you can now start the Python environment for text-generation-webui:<br><br>
 `cmd_windows.bat`
 
-3) With the file that you saved in the **text-generation-webui folder** you now type the following:<br><br>
-`pip install "deepspeed-0.11.2+**THE-VERSION-YOU-ARE-USING**-win_amd64.whl"` (The version you are using shouid match the file name you downloaded).
+3) With the file that you saved in the **text-generation-webui folder** you now type the following, replacing YOUR-VERSION with the name of the file you have:<br><br>
+`pip install "deepspeed-0.11.2+**YOUR-VERSION**-win_amd64.whl"`
    
 5) This should install through cleanly and you should now have DeepSpeed v11.2 installed within the Python 3.11/3.10 environment of text-generation-webui.
    
 6) When you start up text-generation-webui, and AllTalk starts, you should see **[AllTalk Startup] DeepSpeed Detected**
     
 7) Within AllTalk, you will now have a checkbox for **Activate DeepSpeed** though remember you can only change **1x setting every 15 or so seconds**, so dont try to activate DeepSpeed **and** LowVRAM/Change your model simultantiously. Do one of those, wait 15-20 seconds until the change is confirmed in the terminal/command prompt, then you can change the other. When you are happy it works, you can set the default start-up settings in the settings page.
-</details>
+<br><br></details>
 
 #### 🟡 OPTION 2 - A bit more complicated!
 <details>
@@ -328,7 +323,7 @@ def get_shm_size():
 ```build_win.bat``` and wait 10-20 minutes.
 
 11. Now `cd dist` to go into your dist folder and you can now `pip install deepspeed-YOURFILENAME.whl` (or whatever your WHL file is called).
-</details>
+<br><br></details>
 
 ### 🔴 Future to-do list
 - Complete & document the new/full standalone mode API.
